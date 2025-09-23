@@ -7,4 +7,12 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  modules: ['@nuxtjs/google-fonts'],
+  googleFonts: {
+    families: {
+      Kanit: [300, 400, 500, 700],
+      Prompt: [300, 400, 500, 700],
+    },
+    display: 'swap',
+  },
 })
