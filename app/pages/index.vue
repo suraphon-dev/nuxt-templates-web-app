@@ -1,7 +1,32 @@
 <template>
-  <div>index page</div>
+  <div>
+    <ul class="list bg-base-100 rounded-box shadow-md">
+      <li class="p-4 pb-2 text-xs opacity-60 tracking-wide">Nuxt Templates Web App</li>
+      <li class="list-row flex items-center">
+        <div>
+          <div>
+            <span>1.</span>
+            <span class="px-2">Web App 1</span>
+          </div>
+        </div>
+        <button class="btn btn-square btn-ghost" @click="openWindow()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="M5.616 20q-.691 0-1.153-.462T4 18.384V5.616q0-.691.463-1.153T5.616 4h5.115q.213 0 .357.143t.143.357t-.143.357T10.73 5H5.616q-.231 0-.424.192T5 5.616v12.769q0 .23.192.423t.423.192h12.77q.23 0 .423-.192t.192-.423v-5.116q0-.213.143-.357t.357-.143t.357.143t.143.357v5.116q0 .69-.462 1.152T18.384 20zM19 5.708l-8.908 8.908q-.14.14-.344.15t-.363-.15t-.16-.354t.16-.354L18.292 5H14.5q-.213 0-.357-.143T14 4.5t.143-.357T14.5 4h4.692q.349 0 .578.23t.23.578V9.5q0 .214-.143.357T19.5 10t-.357-.143T19 9.5z"
+            />
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </div>
 </template>
 
-<script setup></script>
+<script setup>
+const openWindow = () => {
+  const route = useRoute()
+  window.open(`${route.fullPath}web-app-1`, '_blank')
+}
+</script>
 
 <style lang="scss" scoped></style>

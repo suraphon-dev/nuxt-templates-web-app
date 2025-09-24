@@ -1,7 +1,9 @@
 <template>
-  <div>Web App 1</div>
+  <div>Layout Backoffice</div>
 </template>
 
-<script setup></script>
+<script setup>
+definePageMeta({ layout: 'webapp1' })
+</script>
 
 <style lang="scss" scoped></style>
