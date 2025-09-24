@@ -2,14 +2,14 @@
   <div>
     <ul class="list bg-base-100 rounded-box shadow-md">
       <li class="p-4 pb-2 text-xs opacity-60 tracking-wide">Nuxt Templates Web App</li>
-      <li class="list-row flex items-center">
+      <li v-for="(item, index) in menus" :key="index" class="list-row flex items-center">
         <div>
           <div>
-            <span>1.</span>
-            <span class="px-2">Web App 1</span>
+            <span>{{ index + 1 }}.</span>
+            <span class="px-2">{{ item.name }}</span>
           </div>
         </div>
-        <button class="btn btn-square btn-ghost" @click="openWindow()">
+        <button class="btn btn-square btn-ghost" @click="openWindow(item.route)">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
             <path
               fill="currentColor"
@@ -23,9 +23,22 @@
 </template>
 
 <script setup>
-const openWindow = () => {
+const menus = [
+  {
+    id: 1,
+    name: 'Web App 1',
+    route: 'web-app-1',
+  },
+  {
+    id: 2,
+    name: 'Web App 2',
+    route: 'web-app-2',
+  },
+]
+
+const openWindow = (path) => {
   const route = useRoute()
-  window.open(`${route.fullPath}web-app-1`, '_blank')
+  window.open(`${route.fullPath}${path}`, '_blank')
 }
 </script>
 
